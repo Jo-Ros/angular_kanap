@@ -1,0 +1,24 @@
+<h2>Our Products</h2>
+
+<div class="product-container">
+    <div *ngFor="let product of products" class="product">
+        <h3>
+            <a [title]=" product.name "
+               [routerLink]="['/products', product.id]"
+            >
+                {{ product.name }}
+            </a>
+        </h3>
+
+        <img [src]='product.imgUrl' alt="Photo" class="product-img">
+
+        <p *ngIf="product.description">
+            {{ product.description }}
+        </p>
+
+        <p> {{ product.price | currency }} </p>
+
+        <button *ngIf="product.price < 3400" class="buy-btn">Cheapest :)</button>
+
+    </div>
+</div>

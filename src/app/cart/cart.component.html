@@ -1,0 +1,7 @@
+<h3> Cart </h3>
+
+<div class="cart-item" *ngFor = 'let item of items'>
+    <img [src]='item.imgUrl' alt="Photo" class="product-img small">
+    <span> {{ item.name }} </span>
+    <span> {{ item.price | currency }} </span>
+</div>
